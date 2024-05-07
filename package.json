@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "NODE_ENV=test jest --runInBand",
+    "test:file": "jest"
+  }, 
   "dependencies": {
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
