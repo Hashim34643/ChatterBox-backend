@@ -6,12 +6,14 @@ require("./models/db");
 const http = require("http");
 
 const createUserRouter = require("./routes/create-user");
+const loginRouter = require("./routes/login");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use(createUserRouter);
+app.use(loginRouter);
 
 const server = http.createServer(app);
 
