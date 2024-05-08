@@ -43,3 +43,14 @@ createUserSchema.pre("save", function (next) {
     }
 })
 
+createUserSchema.methods.comparePassword = async function (password) {
+    if (!password) {
+        throw new Error("Password is missing!");
+    };
+    try {
+        const response = await bcrypt.compare(password, this.password)
+        return response;
+    } catch (error) {
+        return false;
+    }
+}
