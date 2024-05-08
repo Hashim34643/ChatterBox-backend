@@ -70,3 +70,19 @@ createUserSchema.statics.isThisEmailInUse = async function (email) {
         return false;
     }
 }
+
+createUserSchema.statics.isThisUsernameInUse = async function (username) {
+    if (!username) {
+        throw new Error("Invalid username");
+    }
+    try {
+        const user = await this.findOne({ username });
+        if (user) {
+            return false
+        } else {
+            return true
+        }
+    } catch (error) {
+        return false;
+    }
+}
