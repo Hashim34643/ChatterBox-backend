@@ -86,3 +86,5 @@ createUserSchema.statics.isThisUsernameInUse = async function (username) {
         return false;
     }
 }
+
+module.exports = mongoose.model("user", createUserSchema);
