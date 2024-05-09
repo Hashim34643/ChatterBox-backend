@@ -8,6 +8,7 @@ const http = require("http");
 const createUserRouter = require("./routes/create-user");
 const loginRouter = require("./routes/login");
 const getUsersRouter = require("./routes/get-all-users");
+const getUserByIdRouter = require("./routes/get-user-by-id");
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(createUserRouter);
 app.use(loginRouter);
 app.use(getUsersRouter);
+app.use(getUserByIdRouter);
 
 const server = http.createServer(app);
 
