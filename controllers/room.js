@@ -2,7 +2,7 @@ const Room = require('../models/room');
 const jwt = require('jsonwebtoken');
 
 const createRoom = async (req, res) => {
-  try {
+    try {
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
     const userIdFromToken = decodedToken.userId;
@@ -15,7 +15,7 @@ const createRoom = async (req, res) => {
     const room = new Room({
       name,
       description,
-      createdBy
+      createdBy: userIdFromToken
     });
 
     const newRoom = await room.save();
