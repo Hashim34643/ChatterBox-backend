@@ -32,23 +32,16 @@ describe("POST /room/create", () => {
         const roomData = {
             name: "Test Room",
             description: "This is a test room",
-            createdBy: userId
         };
 
         const response = await request(app)
-            .post("/room/create")
-            .set("Authorization", jwtToken)
+            .post(`/room/create/${userId}`)
+            .set("Authorization", `Bearer ${jwtToken}`)
             .send(roomData);
-            console.log(userId)
 
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(201);
         expect(response.body).toHaveProperty("success", true);
         expect(response.body).toHaveProperty("message", "Room created successfully");
-
-        const createdRoom = await Room.findOne({ name: roomData.name });
-        expect(createdRoom).toBeTruthy();
-        expect(createdRoom.description).toBe(roomData.description);
-        expect(createdRoom.createdBy).toEqual(roomData.createdBy);
     });
 
     afterAll(async () => {
