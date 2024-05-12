@@ -12,6 +12,7 @@ const getUserByIdRouter = require("./routes/get-user-by-id");
 const updateUserRouter = require("./routes/update-user");
 const deleteAccountRouter = require("./routes/delete-user");
 const roomRouter = require("./routes/room");
+const getAllRoomRouter = require("./routes/get-all-rooms");
 
 const app = express();
 app.use(cors());
@@ -24,6 +25,7 @@ app.use(getUserByIdRouter);
 app.use(updateUserRouter);
 app.use(deleteAccountRouter);
 app.use(roomRouter);
+app.use(getAllRoomRouter);
 
 const server = http.createServer(app);
 
