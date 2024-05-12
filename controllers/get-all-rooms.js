@@ -11,4 +11,4 @@ const getAllRooms = async (req, res) => {
   }
 };
 
-module.exports = { getAllRooms };
+module.exports = getAllRooms;
