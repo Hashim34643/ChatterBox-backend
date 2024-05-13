@@ -1,5 +1,5 @@
 const express = require('express');
-const roomController = require('../controllers/roomController');
+const roomController = require('../controllers/update-room');
 const isAuth = require('../middleware/auth');
 
 const updateRoomRouter = express.Router();
