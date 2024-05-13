@@ -24,4 +24,4 @@ const updateRoom = async (req, res) => {
   }
 };
 
-module.exports = { updateRoom };
+module.exports = updateRoom;
