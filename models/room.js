@@ -17,6 +17,10 @@ const roomSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  liveStatus: {
+    type: Boolean,
+    default: false
   }
 });
 
