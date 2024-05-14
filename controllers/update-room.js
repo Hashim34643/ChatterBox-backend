@@ -1,11 +1,9 @@
-// roomController.js
-
 const Room = require('../models/room');
 
 const updateRoom = async (req, res) => {
   try {
     const { roomId } = req.params;
-    const { name, description } = req.body;
+    const { name, description, liveStatus } = req.body;
 
     const existingRoom = await Room.findById(roomId);
     if (!existingRoom) {
@@ -14,7 +12,9 @@ const updateRoom = async (req, res) => {
 
     existingRoom.name = name || existingRoom.name;
     existingRoom.description = description || existingRoom.description;
-
+    if (typeof liveStatus !== 'undefined') {
+        existingRoom.liveStatus = liveStatus;
+      }
     const updatedRoom = await existingRoom.save();
 
     res.status(200).json({ success: true, message: 'Room updated successfully', room: updatedRoom });
