@@ -12,7 +12,7 @@ const sendMessage = async (req, res) => {
     });
 
     const savedMessage = await message.save();
-    res.status(201).json({ success: true, message: 'Message sent successfully', message: savedMessage });
+    res.status(201).json({ success: true, message: 'Message sent successfully', messageSent: savedMessage });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: 'Error sending message', error: error.message });
