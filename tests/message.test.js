@@ -52,14 +52,13 @@ describe("Message API Endpoints", () => {
       .post(`/${roomId}/send-message`)
       .set("Authorization", `Bearer ${jwtToken}`)
       .send(messageData);
-      console.log(response.body)
 
     expect(response.statusCode).toBe(201);
     expect(response.body.success).toBe(true);
     expect(response.body.message).toBe("Message sent successfully");
-    expect(response.body.message).toHaveProperty("content", messageData.content);
-    expect(response.body.message).toHaveProperty("roomId", roomId);
-    expect(response.body.message).toHaveProperty("userId", userId);
+    expect(response.body.messageData).toHaveProperty("content", messageData.content);
+    expect(response.body.messageData).toHaveProperty("roomId", roomId);
+    expect(response.body.messageData).toHaveProperty("userId", userId);
   });
 
   afterAll(async () => {
