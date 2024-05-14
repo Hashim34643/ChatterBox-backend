@@ -15,7 +15,8 @@ const createRoom = async (req, res) => {
     const room = new Room({
       name,
       description,
-      createdBy: userIdFromToken
+      createdBy: userIdFromToken,
+      liveStatus: true
     });
 
     const newRoom = await room.save();
