@@ -1,5 +1,5 @@
 const express = require('express');
-const editMessage = require('../controllers/message');
+const editMessage = require('../controllers/edit-message');
 const isAuth = require('../middleware/auth');
 
 const editMessageRouter = express.Router();
