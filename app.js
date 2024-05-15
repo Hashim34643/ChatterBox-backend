@@ -17,6 +17,7 @@ const getRoomById = require("./routes/get-room-by-id");
 const updateRoomRouter = require("./routes/update-room");
 const deleteRoomRouter = require("./routes/delete-room");
 const messageRouter = require("./routes/message");
+const getMessagesRouter = require("./routes/get-messages");
 
 const app = express();
 app.use(cors());
@@ -34,6 +35,7 @@ app.use(getRoomById);
 app.use(updateRoomRouter);
 app.use(deleteRoomRouter);
 app.use(messageRouter);
+app.use(getMessagesRouter);
 
 const server = http.createServer(app);
 
