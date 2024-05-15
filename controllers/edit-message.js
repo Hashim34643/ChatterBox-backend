@@ -3,7 +3,7 @@ const Message = require('../models/message');
 const editMessage = async (req, res) => {
   try {
     const { messageId } = req.params;
-    const { content } = req.body;
+    const { content, userId, roomId } = req.body;
 
     const message = await Message.findById(messageId);
     if (!message) {
@@ -12,6 +12,8 @@ const editMessage = async (req, res) => {
 
     message.content = content;
     message.edited = true;
+    message.userId = userId;
+    message.roomId = roomId;
 
     const updatedMessage = await message.save();
 
