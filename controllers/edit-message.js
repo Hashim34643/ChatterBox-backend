@@ -22,4 +22,4 @@ const editMessage = async (req, res) => {
   }
 };
 
-module.exports = editMessage;
+module.exports = editMessage
