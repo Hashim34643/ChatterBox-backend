@@ -18,7 +18,8 @@ const updateRoomRouter = require("./routes/update-room");
 const deleteRoomRouter = require("./routes/delete-room");
 const messageRouter = require("./routes/message");
 const getMessagesRouter = require("./routes/get-messages");
-
+const editMessageRouter = require("./routes/edit-message");
+ 
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -36,6 +37,7 @@ app.use(updateRoomRouter);
 app.use(deleteRoomRouter);
 app.use(messageRouter);
 app.use(getMessagesRouter);
+app.use(editMessageRouter);
 
 const server = http.createServer(app);
 
