@@ -3,7 +3,7 @@
     "test": "NODE_ENV=test jest --runInBand",
     "test:file": "jest",
     "start": "nodemon app.js"
-  }, 
+  },
   "dependencies": {
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
@@ -20,6 +20,7 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "socket.io": "^4.7.5",
-    "supertest": "^7.0.0"
+    "supertest": "^7.0.0",
+    "ws": "^8.17.0"
   }
 }
