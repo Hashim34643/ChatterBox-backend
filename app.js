@@ -21,6 +21,7 @@ const getMessagesRouter = require("./routes/get-messages");
 const editMessageRouter = require("./routes/edit-message");
 const deleteMessageRouter = require("./routes/delete-message");
 const forgotPasswordRouter = require('./routes/forgot-password');
+const resetPasswordRouter = require("./routes/reset-password");
  
 const app = express();
 app.use(cors());
@@ -42,6 +43,7 @@ app.use(getMessagesRouter);
 app.use(editMessageRouter);
 app.use(deleteMessageRouter);
 app.use(forgotPasswordRouter);
+app.use(resetPasswordRouter);
 
 const server = http.createServer(app);
 
